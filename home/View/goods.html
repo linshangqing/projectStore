@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>沃晒购物商城</title>
+<meta name="keywords" content="购物网站模板,服装商城,化妆品商城,鞋子商城,电子商务网站模板" />
+<meta name="description" content="战区购物商场。" />
+<link href="./Include/css/style.css" rel="stylesheet" type="text/css">
+<link href="./Include/css/css3.css" rel="stylesheet" type="text/css">
+<script src="./Include/js/jquery.min.js"></script>
+<script type="text/javascript" src="./Include/js/global.js"></script>
+<script type="text/javascript" src="./Include/js/tab.js"></script>
+<script src="./Include/js/index.js"></script>
+</head>
+<body>
+<div class="center">
+  <div class="center_1">
+    <div class="center_bt">
+      <dl style="opacity:0.5;margin:10px 0 0 50px;"><a href="#">箱包</a></dl><dl style="opacity:0.9;margin-left:0;"><a href="#">服装</a></dl>
+      <ul>
+        <li><a href="#">男装</a></li><li><a href="#">女装</a></li>
+        <li><a href="#">童装</a></li><li><a href="#">男鞋</a></li>
+        <li><a href="#">女鞋</a></li><li><a href="#">箱包</a></li>
+        <li><a href="#">内衣</a></li><li><a href="#">户外套装</a></li>
+      </ul>
+      <dd><a href="#">更多</a></dd>
+      <dt></dt>
+    </div>
+    <div class="center_ner">
+      <ul>
+        <?php if(!empty($goods)){?>
+            <?php foreach($goods as $value){?>
+        <li>        
+            <div class="center_img">
+                <a href="./index.php?c=details&a=index&id=<?php echo $value['id']?>">
+                <img src="../public/goods/<?php echo $value['pic']?>" width="250" height="150"">
+                </a>
+                </a>
+            </div>
+          <div class="center_price">￥<?php echo $value['price']?></div>
+          
+          <a  href="#" class="center_name"><?php echo $value['name']?></a>
+          <div class="center_icon">
+            <div class="center_look"><dd>
+            <img src="./Include/images/center_look.png"></dd>
+            <span>0</span>
+            </div>
+            <div class="center_look">0人付款</div>
+            <a class="center_go" href="./index.php?c=cart&a=addCart&id=<?php echo $value['id']?>" ></a>
+          </div>
+          <div class="center_line"></div>
+          <?php  }?>
+          <?php } else{?>
+          <div>暂无数据<div>
+          <?php }?>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

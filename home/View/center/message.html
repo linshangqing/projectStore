@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我的中心</title>
+		<link rel="stylesheet" type="text/css" href="./Include/css/center/identify.css" />
+		<link rel="stylesheet" type="text/css" href="./Include/css/center/layout.css" />
+		<link rel="stylesheet" type="text/css" href="./Include/css/center/account.css" />
+		<link rel="stylesheet" type="text/css" href="./Include/css/center/style.css" />
+		<link rel="stylesheet" type="text/css" href="./Include/css/center/control_index.css" />
+		<script type="text/javascript" src="./Include/Js/jquery-1.7.2.min.js"></script>
+	</head>
+
+	<body>
+		<div class="view-body">
+			<div class="view-sidebar">
+				<div class="sidebar-content">
+					<div class="sidebar-nav">
+						<div class="sidebar-title">
+							<a href="./index.php?c=myinfo&a=index">
+								<span class="icon"><b class="fl icon-arrow-down"></b></span>
+								<span class="text-normal" style="margin-left:-20px;">&nbsp;用&nbsp;户&nbsp;中&nbsp;心</span>
+							</a>
+						</div>
+						<ul class="sidebar-trans">
+							<li>
+								<a href="">
+									<b class="sidebar-icon"><img src="./Include/images/icon_cost.png" width="16" height="16" /></b>
+									<span class="text-normal">个人信息</span>
+								</a>
+							</li>
+							<li>
+								<a href="./index.php?c=myinfo&a=message">
+									<b class="sidebar-icon"><img src="./Include/images/icon_news.png" width="16" height="16" /></b>
+									<span class="text-normal">消息中心</span>
+								</a>
+							</li>
+							<li>
+								<a href="./index.php?c=myinfo&a=myorder">
+									<b class="sidebar-icon"><img src="./Include/images/icon_order.png" width="16" height="16" /></b>
+									<span class="text-normal">订单管理</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="view-product">
+				<div class="info-center">
+					<div class="manage-head">
+						<h6 class=" padding-left manage-head-con ">消息中心</h6>
+					</div>
+					<div class="info-center-con">
+						<div class=" info-center-title h5 margin-big-top clearfix">
+							<span class="fl padding-large-right manage-title"><a href="#">全部消息</a></span>
+							<span class="fl padding-large-right"><a href="#">已读消息(0)</a></span>
+							<span class="fl"><a href="#">未读消息(0)</a></span>
+						</div>
+						<p style="width: 56px; left: 20px;" class="solid-slider">
+						</p>
+					</div>
+					<div class="offcial-table input-table table-margin clearfix">
+						<div class="tr-th clearfix">
+							<div class="th w5 text-center">
+							</div>
+							<div class="padding-left-15 th w55">
+								标题内容
+							</div>
+							<div class="th w25">
+								提交时间
+							</div>
+							<div class="th w15">
+								类型
+							</div>
+						</div>
+						<div class="non-info">
+							<span>没有任何消息</span>
+						</div>
+					</div>
+				</div>
+				<div class="show-page padding-top-0 layout hidden">
+					<ul class="tr-float">
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			$(".sidebar-title").live('click', function() {
+				if ($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
+					$(this).next().slideDown(200);
+					$(this).parent(".sidebar-nav").removeClass("sidebar-nav-fold");
+				} else {
+					$(this).next().slideUp(200);
+					$(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
+				}
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>沃晒购物商城</title>
+<meta name="keywords" content="购物网站模板,服装商城,化妆品商城,鞋子商城,电子商务网站模板" />
+<meta name="description" content="战区购物商场。" />
+<link href="./Include/css/style.css" rel="stylesheet" type="text/css">
+<link href="./Include/css/css3.css" rel="stylesheet" type="text/css">
+<script src="./Include/js/jquery.min.js"></script>
+<script type="text/javascript" src="./Include/js/global.js"></script>
+<script type="text/javascript" src="./Include/js/tab.js"></script>
+<script src="./Include/js/index.js"></script>
+</head>
+<body>
+<div class="bottom">
+  <div class="bottom_city"></div>
+  <div class="bottom_left">
+    <div class="bottom_logo"><a href="index.php"><img src="./Include/images/bottom_logo.png"></a></div>
+    
+  </div>
+  <div class="bottom_center">
+    <div class="bottom_tab">
+      <dl>
+        <dd>沃晒服务</dd>
+        <dt><a href="index.php?c=index&a=register">免费注册</a></dt>
+        <dt><a href="">城市名片</a></dt>
+        <dt><a href="">售后规则</a></dt>
+        <dt><a href="">缺货赔付</a></dt>
+        <dt><a href="">用户反馈</a></dt>
+        <dt><a href="">商家入驻</a></dt>
+      </dl>
+      <dl>
+        <dd>友情链接</dd>
+        <?php if(!empty($linklist)){?>
+        <?php foreach($linklist as $value){?>
+        <dt>
+          <a href="<?php echo $value['url']?>" target="_blank"><?php echo $value['name']?></a>
+        </dt>
+        <?php }?>
+      
+        <?php }else{?>  
+        <dt>
+          <a href="">暂无链接</a>
+        </dt>   
+        <?php }?>
+      </dl>
+    </div>
+     <div class="copy">©2018 Super版权归林尚卿所属 闽ICP备8888888号</div>
+  </div>
+</div>
+
+
+<div class="go_center">
+  <a href="#" class="go_top"><img src="./Include/images/go_top.png"></a>
+  <a href="#" class="go_ma"><img src="./Include/images/go_ma.jpg"></a>
+  <div class="go_text">沃晒手机客户端</div>
+</div>
+
+</body>
+</html>

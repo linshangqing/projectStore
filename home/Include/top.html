@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>沃晒购物商城</title>
+<meta name="keywords" content="购物网站模板,服装商城,化妆品商城,鞋子商城,电子商务网站模板" />
+<meta name="description" content="战区购物商场。" />
+<link href="./Include/css/style.css" rel="stylesheet" type="text/css">
+<link href="./Include/css/css3.css" rel="stylesheet" type="text/css">
+<script src="./Include/js/jquery.min.js"></script>
+<script type="text/javascript" src="./Include/js/global.js"></script>
+<script type="text/javascript" src="./Include/js/tab.js"></script>
+<script src="./Include/js/index.js"></script>
+</head>
+<body>
+
+<div class="top" style="height:50px;" >
+  <div class="head">
+    <div class="hear_l"><a href="index.php?c=index&a=index" style="color:white">返回首页</a></div>
+    <?php if(empty($_SESSION['home'])){?>
+    <div class="head_r">
+    <p>一个城市 , 一个梦想 欢迎来到商城 , 请您先<p><a href="index.php?c=index&a=login">登陆</a>or<a href="reg.html">注册</a>
+    <a href="index.php?c=cart&a=index">购物车(<?php echo $nums?>)</a></div>
+    <?php }else{?>
+    <div class="head_r" style="color:white">
+    您好,尊敬的<?php echo $_SESSION['home']['name']?>会员&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?c=index&a=outlog"   onclick="return confirm('确认退出吗?')">退出</a>
+    <a href="index.php?c=cart&a=index">购物车(<?php echo $nums?>)</a>
+    <a href="index.php?c=myinfo&a=index">我的中心</a>
+    </div>
+    <?php }?>
+  </div>
+</div>

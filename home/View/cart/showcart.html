@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <meta name="author" content="js代码" />
+    <meta name="copyright" content="js代码" />
+    <link rel="stylesheet" href="./Include/css/reset.css">
+    <link rel="stylesheet" href="./Include/css/carts.css">
+</head>
+<body>
+    <section class="cartMain">
+        <div class="cartMain_hd">
+            <ul class="order_lists cartTop">
+                 <li class="list_chk">
+                    <b style="color:red;font-size:15px;">购物车</b>
+                </li>
+                <li class="list_con">商品名称</li>
+                <li class="list_info">商品详情</li>
+                <li class="list_price">单价</li>
+                <li class="list_amount">数量</li>
+                <li class="list_sum">金额</li>
+                <li class="list_op">操作</li>
+            </ul>
+        </div>
+
+        <div class="cartBox">
+            <div class="shop_info">
+                <!-- <div class="all_check"> -->
+                    <!-- 店铺全选 -->
+                    <!-- <input type="checkbox" id="shop_a" class="shopChoice">
+                    <label for="shop_a" class="shop"></label>
+                </div>
+                <div class="shop_name">
+                    店铺：<a href="javascript:;">搜猎人艺术生活</a>
+                </div> -->
+            </div>
+            <form method="post" action="index.php?c=order&a=accounts">
+            <?php if(!empty($_SESSION['cart'])){?>
+            <?php foreach($_SESSION['cart'] as $value){?>
+            <div class="order_content">
+                <ul class="order_lists">
+                    <li class="list_chk">
+                   <!--     <input type="checkbox" id="checkbox_2" class="son_check">
+                        <label for="checkbox_2"></label>  -->
+                    </li>
+                    <li class="list_con">
+                        <div class="list_img"><a href="javascript:;"><img src="../public/goods/<?php echo $value['pic']?>" alt="" style="width:60px;" ></a></div>
+                        <div class="list_text"><a><?php echo $value['name']?></a></div>
+                    </li>
+                    <li class="list_info">
+                        <p><?php echo $value['descr']?></p>
+                    </li>
+                    <li class="list_price">
+                        <p class="price"><?php echo $value['price']?></p>
+                    </li>
+                    <li class="list_amount">
+                        <div class="amount_box">
+                            <a href="./index.php?c=cart&a=jian&id=<?php echo $value['id']?>" class="reSty">-</a>
+                            <input type="text" value="<?php echo $value['num']?>" class="sum" disabled>
+                            <a href="./index.php?c=cart&a=jia&id=<?php echo $value['id']?>" class="pluss">+</a>
+                        </div>
+                    </li>
+                    <li class="list_sum">
+                        <p class="sum_price"><?php echo $value['price']*$value['num']?></p>
+                    </li>
+                    <li class="list_op">
+                        <p class="del"><a href="./index.php?c=cart&a=del&id=<?php echo $value['id']?>" class="delBtn">移除商品</a></p>
+                    </li>
+                </ul>
+
+            </div>
+            <?php }?>
+            <?php }else {?>
+            <div class="order_content"><a href="./index.php">购物车暂时没有商品,快去购物吧</a></div>
+            <?php }?>
+            
+        </div>
+        <!--底部-->
+        <div class="bar-wrapper">
+            <div class="bar-left">
+                <div class="piece">
+                <a href="index.php?c=cart&a=delete" style="text-decoration:none;">清空购物车</a>
+                </div>
+                <div class="piece">
+                <a href="index.php?c=index&a=index" style="text-decoration:none;">继续购物</a>
+                </div>
+            </div>
+            <div class="bar-right">
+                <div class="piece">已加购物车<strong class="piece_num"><?php echo $nums?></strong>件</div>
+                <div class="totalMoney">共计: <strong class="total_text">￥<?php echo $sum?></strong></div>
+                </a>
+                <div class="calBtn">
+                <input class="btn_sty" type="submit" value="结算">
+                </div>
+                </form>
+            </div>
+        </div>
+    </section> 
+    <script src="./include/js/jquery.min.js"></script>
+    <script src="./include/js/carts.js"></script>
+    
+</body>
+</html>
